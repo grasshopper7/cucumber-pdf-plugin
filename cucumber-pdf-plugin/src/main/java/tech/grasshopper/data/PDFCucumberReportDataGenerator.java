@@ -85,7 +85,7 @@ public class PDFCucumberReportDataGenerator {
 
 	private LocalDateTime createHooks(List<tech.grasshopper.pojo.Hook> hooks, LocalDateTime startTime,
 			List<Hook> collectHooks, HookType hookType, List<Status> statuses) {
-		LocalDateTime endTime = null;
+		LocalDateTime endTime = LocalDateTime.from(startTime);
 		for (tech.grasshopper.pojo.Hook hook : hooks) {
 			endTime = startTime.plusNanos(hook.getResult().getDuration());
 			collectHooks.add(
