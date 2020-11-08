@@ -5,6 +5,7 @@
 	<groupId>tech.grasshopper</groupId>
 	<artifactId>cucumber-pdf-plugin</artifactId>
 	<version>1.0.0</version>
+	<name>cucumber-pdf-plugin</name>
 	<packaging>maven-plugin</packaging>
 	<url>https://grasshopper.tech/2224</url>
 	<description>Generates Cucumber execution report in PDF format</description>
