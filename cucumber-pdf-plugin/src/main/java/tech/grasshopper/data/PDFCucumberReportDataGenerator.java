@@ -15,6 +15,7 @@ import tech.grasshopper.pdf.pojo.cucumber.Status;
 import tech.grasshopper.pdf.pojo.cucumber.Step;
 import tech.grasshopper.pdf.util.DateUtil;
 import tech.grasshopper.pojo.Embedded;
+import tech.grasshopper.pojo.Row;
 
 public class PDFCucumberReportDataGenerator {
 
@@ -53,6 +54,7 @@ public class PDFCucumberReportDataGenerator {
 					endTime = startTime.plusNanos(cukeStep.getResult().getDuration());
 					steps.add(Step.builder().name(cukeStep.getName()).before(beforeStepHooks).after(afterStepHooks)
 							.status(convertStatus(cukeStep.getResult().getStatus())).keyword(cukeStep.getKeyword())
+							.docString(cukeStep.getDocString().getValue()).rows(convertRows(cukeStep.getRows()))
 							.errorMessage(cukeStep.getResult().getErrorMessage()).output(cukeStep.getOutput())
 							.media(getMediaData(cukeStep.getEmbeddings())).startTime(startTime).endTime(endTime)
 							.build());
@@ -110,5 +112,13 @@ public class PDFCucumberReportDataGenerator {
 
 	private List<String> getMediaData(List<Embedded> embeddings) {
 		return embeddings.stream().map(e -> e.getFilePath()).collect(Collectors.toList());
+	}
+
+	private List<tech.grasshopper.pdf.pojo.cucumber.Row> convertRows(List<Row> rows) {
+		List<tech.grasshopper.pdf.pojo.cucumber.Row> pdfRows = new ArrayList<>();
+		rows.forEach(r -> {
+			pdfRows.add(tech.grasshopper.pdf.pojo.cucumber.Row.builder().cells(r.getCells()).build());
+		});
+		return pdfRows;
 	}
 }
