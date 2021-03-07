@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -12,7 +13,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import net.iharder.Base64;
 import tech.grasshopper.logging.CucumberPDFReportLogger;
 import tech.grasshopper.pojo.Embedded;
 import tech.grasshopper.properties.ReportProperties;
@@ -30,7 +30,6 @@ public class EmbeddedProcessor {
 			put("image/jpeg", "jpg");
 			put("image/png", "png");
 			put("image/svg+xml", "svg");
-			put("video/ogg", "ogg");
 		}
 	};
 
@@ -50,7 +49,7 @@ public class EmbeddedProcessor {
 		if (extension != null) {
 			Path path = createEmbeddedFileStructure(extension);
 			try {
-				Files.write(path, Base64.decode(embedded.getData()));
+				Files.write(path, Base64.getDecoder().decode(embedded.getData()));
 			} catch (IOException e) {
 				logger.warn("Skipping embedded file creation at location - " + path.toString()
 						+ ", due to error in creating file.");
@@ -59,6 +58,7 @@ public class EmbeddedProcessor {
 				// No need anymore
 				embedded.setData("");
 			}
+
 			embedded.setFilePath(Paths
 					.get(reportProperties.getReportScreenshotLocation(), path.getFileName().toString()).toString());
 		} else {
