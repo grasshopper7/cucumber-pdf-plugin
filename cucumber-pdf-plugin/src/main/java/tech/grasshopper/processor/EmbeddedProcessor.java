@@ -13,6 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import lombok.SneakyThrows;
 import tech.grasshopper.logging.CucumberPDFReportLogger;
 import tech.grasshopper.pojo.Embedded;
 import tech.grasshopper.properties.ReportProperties;
@@ -48,22 +49,40 @@ public class EmbeddedProcessor {
 
 		if (extension != null) {
 			Path path = createEmbeddedFileStructure(extension);
+
 			try {
 				Files.write(path, Base64.getDecoder().decode(embedded.getData()));
 			} catch (IOException e) {
-				logger.warn("Skipping embedded file creation at location - " + path.toString()
+				logger.warn("Displaying 'no image file' for location - " + path.toString()
 						+ ", due to error in creating file.");
+
+				path = createNoImageFoundFileStructure();
 				return;
 			} finally {
 				// No need anymore
+				embedded.setFilePath(path.toString());
 				embedded.setData("");
 			}
-
-			embedded.setFilePath(Paths
-					.get(reportProperties.getReportScreenshotLocation(), path.getFileName().toString()).toString());
 		} else {
 			logger.warn("Mime type '" + mimeType + "' not supported.");
 		}
+	}
+
+	@SneakyThrows
+	private Path createNoImageFoundFileStructure() {
+		String embedDirPath = reportProperties.getReportScreenshotLocation();
+		Path path = Paths.get(embedDirPath, "not-found-image.png");
+
+		if (path.toFile().exists())
+			return path;
+
+		File dir = new File(embedDirPath);
+		// Create directory if not existing
+		if (!dir.exists())
+			dir.mkdirs();
+
+		Files.write(path, Base64.getDecoder().decode(NoImageFile.BASE64_STR));
+		return path;
 	}
 
 	private Path createEmbeddedFileStructure(String extension) {
