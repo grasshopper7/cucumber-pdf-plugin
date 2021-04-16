@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.4.0 (2021-4-16)
+
+* Updated cucumber PDF report version to 2.2.0
+
 ## 1.3.0 (2021-3-7)
 
 * Updated cucumber PDF report version to 2.0.0
