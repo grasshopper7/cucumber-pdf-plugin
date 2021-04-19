@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tech.grasshopper</groupId>
 	<artifactId>cucumber-pdf-plugin</artifactId>
-	<version>1.4.0</version>
+	<version>1.4.1</version>
 	<packaging>maven-plugin</packaging>
 	<url>https://grasshopper.tech/2224</url>
 	<description>Generates Cucumber execution report in PDF format

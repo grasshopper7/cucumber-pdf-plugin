@@ -52,7 +52,7 @@ public class PDFCucumberReportDataGenerator {
 							stepHookStatuses);
 
 					endTime = startTime.plusNanos(cukeStep.getResult().getDuration());
-					steps.add(Step.builder().name(cukeStep.getName()).before(beforeStepHooks).after(afterStepHooks)
+					steps.add(Step.builder().name(cukeStep.getKeyword() + cukeStep.getName()).before(beforeStepHooks).after(afterStepHooks)
 							.status(convertStatus(cukeStep.getResult().getStatus())).keyword(cukeStep.getKeyword())
 							.docString(cukeStep.getDocString().getValue()).rows(convertRows(cukeStep.getRows()))
 							.errorMessage(cukeStep.getResult().getErrorMessage()).output(cukeStep.getOutput())
