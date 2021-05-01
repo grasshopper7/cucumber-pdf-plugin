@@ -39,4 +39,13 @@ The below configuration needs to be added to the project pom to setup the PDF re
 ![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/scenario.png)
 
 **DETAILED SECTION**
+
 ![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/details.png)
+
+**SCREENSHOT**
+
+![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/screenshot.png)
+
+**EXPANDED SECTION**
+
+![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/expanded.png)
