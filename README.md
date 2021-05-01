@@ -2,6 +2,30 @@
 
 Refer to this [article](https://grasshopper.tech/2224/) for more details
 
+The below configuration needs to be added to the project pom to setup the PDF report plugin.
+
+```
+<plugin>
+	<groupId>tech.grasshopper</groupId>
+	<artifactId>cucumber-pdf-plugin</artifactId>
+	<version>1.4.2</version>
+	<executions>
+		<execution>
+			<id>report</id>
+			<phase>post-integration-test</phase>
+			<goals>
+				<goal>pdfreport</goal>
+			</goals>
+		</execution>
+	</executions>
+	<configuration>
+		<cucumberJsonReportDirectory>${project.build.directory}/json-report</cucumberJsonReportDirectory>
+		<cucumberPdfReportDirectory>pdf-report</cucumberPdfReportDirectory>
+		<strictCucumber6Behavior>true</strictCucumber6Behavior>
+	</configuration>
+</plugin>
+```
+
 **SUMMARY SECTION**
 
 ![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/summary.png)
