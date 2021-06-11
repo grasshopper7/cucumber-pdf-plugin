@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.4.3 (2021-6-11)
+
+* Updated cucumber PDF report version to 2.2.2
+
 ## 1.4.2 (2021-4-30)
 
 * Images not displayed when attached in after hook [Issue 5](https://github.com/grasshopper7/cucumber-pdf-plugin/issues/5)
