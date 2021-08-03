@@ -15,6 +15,8 @@ import tech.grasshopper.json.JsonPathCollector;
 import tech.grasshopper.logging.CucumberPDFReportLogger;
 import tech.grasshopper.pdf.PDFCucumberReport;
 import tech.grasshopper.pdf.data.ReportData;
+import tech.grasshopper.pdf.section.details.executable.MediaCleanup.CleanupType;
+import tech.grasshopper.pdf.section.details.executable.MediaCleanup.MediaCleanupOption;
 import tech.grasshopper.pojo.Feature;
 import tech.grasshopper.processor.HierarchyProcessor;
 import tech.grasshopper.properties.ReportProperties;
@@ -24,7 +26,7 @@ public class CucumberPDFReportPlugin extends AbstractMojo {
 
 	@Parameter(property = "pdfreport.cucumberJsonReportDirectory", required = true)
 	private String cucumberJsonReportDirectory;
-	
+
 	@Parameter(property = "pdfreport.cucumberPdfReportDirectory", required = true)
 	private String cucumberPdfReportDirectory;
 
@@ -36,7 +38,6 @@ public class CucumberPDFReportPlugin extends AbstractMojo {
 	private ReportProperties reportProperties;
 	private HierarchyProcessor hierarchyProcessor;
 	private CucumberPDFReportLogger logger;
-
 
 	@Inject
 	public CucumberPDFReportPlugin(JsonPathCollector jsonPathCollector, JsonFileConverter jsonFileConverter,
@@ -62,7 +63,8 @@ public class CucumberPDFReportPlugin extends AbstractMojo {
 			PDFCucumberReportDataGenerator generator = new PDFCucumberReportDataGenerator();
 			ReportData reportData = generator.generateReportData(features);
 
-			PDFCucumberReport pdfCucumberReport = new PDFCucumberReport(reportData, cucumberPdfReportDirectory);
+			PDFCucumberReport pdfCucumberReport = new PDFCucumberReport(reportData, cucumberPdfReportDirectory,
+					MediaCleanupOption.builder().cleanUpType(CleanupType.ALL).build());
 			pdfCucumberReport.createReport();
 
 			logger.info("FINISHED CUCUMBER PDF REPORT GENERATION PLUGIN");
