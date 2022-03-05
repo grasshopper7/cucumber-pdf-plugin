@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.5.0 (2022-3-5)
+
+* Updated cucumber PDF report version to 2.5.0
+
 ## 1.4.2 (2021-6-11)
 
 * Remove all temporary media files [Issue 6](https://github.com/grasshopper7/cucumber-pdf-plugin/issues/6)

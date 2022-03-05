@@ -26,11 +26,12 @@ public class EmbeddedProcessor {
 	@SuppressWarnings("serial")
 	private static final Map<String, String> MIME_TYPES_EXTENSIONS = new HashMap<String, String>() {
 		{
+			// JPG, JPEG, TIF, TIFF, GIF, BMP and PNG
 			put("image/bmp", "bmp");
 			put("image/gif", "gif");
 			put("image/jpeg", "jpg");
+			put("image/tiff", "tif");
 			put("image/png", "png");
-			put("image/svg+xml", "svg");
 		}
 	};
 
@@ -65,6 +66,11 @@ public class EmbeddedProcessor {
 			}
 		} else {
 			logger.warn("Mime type '" + mimeType + "' not supported.");
+
+			Path path = createNoImageFoundFileStructure();
+			// No need anymore
+			embedded.setFilePath(path.toString());
+			embedded.setData("");
 		}
 	}
 
