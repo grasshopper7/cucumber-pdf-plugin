@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## 1.6.0 (2022-4-12)
 
-* Updated cucumber PDF report version to 2.6.0
+* Updated cucumber PDF report version to 2.6.1
 
 ## 1.5.0 (2022-3-5)
 
