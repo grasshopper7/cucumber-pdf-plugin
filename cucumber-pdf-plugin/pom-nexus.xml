@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tech.grasshopper</groupId>
 	<artifactId>cucumber-pdf-plugin</artifactId>
-	<version>1.5.0</version>
+	<version>1.6.0</version>
 	<name>cucumber-pdf-plugin</name>
 	<packaging>maven-plugin</packaging>
 	<url>https://ghchirp.tech/2224</url>
@@ -33,7 +33,7 @@
 
 		<gson.version>2.9.0</gson.version>
 		<lombok.version>1.18.18</lombok.version>
-		<pdfreporter.version>2.5.0</pdfreporter.version>
+		<pdfreporter.version>2.6.0</pdfreporter.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
