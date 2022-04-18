@@ -52,12 +52,13 @@ public class PDFCucumberReportDataGenerator {
 							stepHookStatuses);
 
 					endTime = startTime.plusNanos(cukeStep.getResult().getDuration());
-					steps.add(Step.builder().name(cukeStep.getKeyword() + cukeStep.getName()).before(beforeStepHooks)
-							.after(afterStepHooks).status(convertStatus(cukeStep.getResult().getStatus()))
-							.keyword(cukeStep.getKeyword()).docString(cukeStep.getDocString().getValue())
-							.rows(convertRows(cukeStep.getRows())).errorMessage(cukeStep.getResult().getErrorMessage())
-							.output(cukeStep.getOutput()).media(getMediaData(cukeStep.getEmbeddings()))
-							.startTime(startTime).endTime(endTime).build());
+					steps.add(Step.builder().name(cukeStep.getKeyword() + " " + cukeStep.getName())
+							.before(beforeStepHooks).after(afterStepHooks)
+							.status(convertStatus(cukeStep.getResult().getStatus())).keyword(cukeStep.getKeyword())
+							.docString(cukeStep.getDocString().getValue()).rows(convertRows(cukeStep.getRows()))
+							.errorMessage(cukeStep.getResult().getErrorMessage()).output(cukeStep.getOutput())
+							.media(getMediaData(cukeStep.getEmbeddings())).startTime(startTime).endTime(endTime)
+							.build());
 					startTime = LocalDateTime.from(endTime);
 					stepHookStatuses.add(convertStatus(cukeStep.getResult().getStatus()));
 

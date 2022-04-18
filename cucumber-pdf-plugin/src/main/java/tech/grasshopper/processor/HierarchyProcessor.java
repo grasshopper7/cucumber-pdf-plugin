@@ -28,7 +28,7 @@ public class HierarchyProcessor {
 	}
 
 	private void updateScenarioWithBackgroundSteps(List<Feature> features) {
-		
+
 		for (Feature feature : features) {
 			if (feature.getElements().get(0).getKeyword().equalsIgnoreCase("background")) {
 				List<Scenario> scenarios = feature.getElements();
@@ -48,11 +48,14 @@ public class HierarchyProcessor {
 	}
 
 	private void updateStatusForStrict(List<Feature> features) {
-		
+
 		List<Step> steps = features.stream().flatMap(f -> f.getElements().stream()).flatMap(s -> s.getSteps().stream())
 				.collect(Collectors.toList());
 
 		for (Step step : steps) {
+			//Remove trailing space
+			step.setKeyword(step.getKeyword().trim());
+
 			if (reportProperties.isStrictCucumber6Behavior()) {
 				String status = step.getResult().getStatus();
 				if (status.equalsIgnoreCase("pending") || status.equalsIgnoreCase("undefined"))
