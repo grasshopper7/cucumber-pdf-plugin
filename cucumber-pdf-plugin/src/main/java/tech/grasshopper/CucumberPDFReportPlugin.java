@@ -27,8 +27,11 @@ public class CucumberPDFReportPlugin extends AbstractMojo {
 	@Parameter(property = "pdfreport.cucumberJsonReportDirectory", required = true)
 	private String cucumberJsonReportDirectory;
 
-	@Parameter(property = "pdfreport.cucumberPdfReportDirectory", required = true)
+	@Parameter(property = "pdfreport.cucumberPdfReportDirectory", /* required = true, */defaultValue = ReportProperties.REPORT_DIRECTORY)
 	private String cucumberPdfReportDirectory;
+
+	@Parameter(property = "pdfreport.reportDirectoryTimeStamp", defaultValue = ReportProperties.REPORT_DIRECTORY_TIMESTAMP)
+	private String cucumberPdfReportDirectoryTimeStamp;
 
 	@Parameter(property = "pdfreport.strictCucumber6Behavior", defaultValue = "true")
 	private String strictCucumber6Behavior;
@@ -55,6 +58,7 @@ public class CucumberPDFReportPlugin extends AbstractMojo {
 			logger.info("STARTED CUCUMBER PDF REPORT GENERATION PLUGIN");
 
 			reportProperties.setStrictCucumber6Behavior(strictCucumber6Behavior);
+			reportProperties.setReportDirectory(cucumberPdfReportDirectory, cucumberPdfReportDirectoryTimeStamp);
 
 			List<Path> jsonFilePaths = jsonPathCollector.retrieveFilePaths(cucumberJsonReportDirectory);
 			List<Feature> features = jsonFileConverter.retrieveFeaturesFromReport(jsonFilePaths);
@@ -63,7 +67,8 @@ public class CucumberPDFReportPlugin extends AbstractMojo {
 			PDFCucumberReportDataGenerator generator = new PDFCucumberReportDataGenerator();
 			ReportData reportData = generator.generateReportData(features);
 
-			PDFCucumberReport pdfCucumberReport = new PDFCucumberReport(reportData, cucumberPdfReportDirectory,
+			PDFCucumberReport pdfCucumberReport = new PDFCucumberReport(reportData,
+					reportProperties.getReportDirectory(),
 					MediaCleanupOption.builder().cleanUpType(CleanupType.ALL).build());
 			pdfCucumberReport.createReport();
 
