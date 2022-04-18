@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.7.0 (2022-4-18)
+
+* Allow creation of report in custome timestamped folders
+* Removed trailing white space from step keyword
+
 ## 1.6.0 (2022-4-12)
 
 * Updated cucumber PDF report version to 2.6.1

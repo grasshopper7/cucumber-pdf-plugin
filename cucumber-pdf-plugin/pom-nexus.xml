@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tech.grasshopper</groupId>
 	<artifactId>cucumber-pdf-plugin</artifactId>
-	<version>1.6.0</version>
+	<version>1.7.0</version>
 	<name>cucumber-pdf-plugin</name>
 	<packaging>maven-plugin</packaging>
 	<url>https://ghchirp.tech/2224</url>
