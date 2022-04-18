@@ -24,7 +24,8 @@ public class HierarchyProcessor {
 
 	public void process(List<Feature> features) {
 		updateScenarioWithBackgroundSteps(features);
-		updateStatusForStrict(features);
+		updateStepStatusForStrict(features);
+		trimStepKeyword(features);
 	}
 
 	private void updateScenarioWithBackgroundSteps(List<Feature> features) {
@@ -47,20 +48,32 @@ public class HierarchyProcessor {
 		}
 	}
 
-	private void updateStatusForStrict(List<Feature> features) {
+	private void updateStepStatusForStrict(List<Feature> features) {
+		if (reportProperties.isStrictCucumber6Behavior()) {
+			List<Step> steps = retrieveSteps(features);
 
-		List<Step> steps = features.stream().flatMap(f -> f.getElements().stream()).flatMap(s -> s.getSteps().stream())
-				.collect(Collectors.toList());
+			for (Step step : steps) {
+				// Remove trailing space
+				step.setKeyword(step.getKeyword().trim());
 
-		for (Step step : steps) {
-			//Remove trailing space
-			step.setKeyword(step.getKeyword().trim());
-
-			if (reportProperties.isStrictCucumber6Behavior()) {
 				String status = step.getResult().getStatus();
 				if (status.equalsIgnoreCase("pending") || status.equalsIgnoreCase("undefined"))
 					step.getResult().setStatus("failed");
 			}
 		}
+	}
+
+	private void trimStepKeyword(List<Feature> features) {
+		List<Step> steps = retrieveSteps(features);
+
+		for (Step step : steps) {
+			// Remove trailing space
+			step.setKeyword(step.getKeyword().trim());
+		}
+	}
+
+	private List<Step> retrieveSteps(List<Feature> features) {
+		return features.stream().flatMap(f -> f.getElements().stream()).flatMap(s -> s.getSteps().stream())
+				.collect(Collectors.toList());
 	}
 }
