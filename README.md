@@ -20,11 +20,15 @@ The below configuration needs to be added to the project pom to setup the PDF re
 	</executions>
 	<configuration>
 		<cucumberJsonReportDirectory>${project.build.directory}/json-report</cucumberJsonReportDirectory>
-		<cucumberPdfReportDirectory>pdf-report</cucumberPdfReportDirectory>
-		<strictCucumber6Behavior>true</strictCucumber6Behavior>
 	</configuration>
 </plugin>
 ```
+
+**Plugin Configurations**
+- cucumberJsonReportDirectory - Directory location of cucumber json report files
+- cucumberPdfReportDirectory - Directory prefix of location of generated pdf report, default is 'report'
+- cucumberPdfReportDirectoryTimeStamp - Directory suffix of location of generated pdf report, default is 'dd MM yyyy HH mm ss'
+- strictCucumber6Behavior - Default is true
 
 **SUMMARY SECTION**
 
