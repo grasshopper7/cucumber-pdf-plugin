@@ -1,13 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 1.7.1 (2022-4-19)
+## 1.8.0 (2022-4-23)
 
+* Configuration like title, colors etc can be set in pom
 * Refactored heirarchy processor methods
 
 ## 1.7.0 (2022-4-18)
 
-* Allow creation of report in custome timestamped folders
+* Allow creation of report in custom timestamped folders
 * Removed trailing white space from step keyword
 
 ## 1.6.0 (2022-4-12)
