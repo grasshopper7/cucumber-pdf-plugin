@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.7.1 (2022-4-19)
+
+* Refactored heirarchy processor methods
+
 ## 1.7.0 (2022-4-18)
 
 * Allow creation of report in custome timestamped folders
