@@ -14,6 +14,7 @@ import tech.grasshopper.json.JsonFileConverter;
 import tech.grasshopper.json.JsonPathCollector;
 import tech.grasshopper.logging.CucumberPDFReportLogger;
 import tech.grasshopper.pdf.PDFCucumberReport;
+import tech.grasshopper.pdf.config.ParameterConfig;
 import tech.grasshopper.pdf.data.ReportData;
 import tech.grasshopper.pdf.section.details.executable.MediaCleanup.CleanupType;
 import tech.grasshopper.pdf.section.details.executable.MediaCleanup.MediaCleanupOption;
@@ -35,6 +36,36 @@ public class CucumberPDFReportPlugin extends AbstractMojo {
 
 	@Parameter(property = "pdfreport.strictCucumber6Behavior", defaultValue = "true")
 	private String strictCucumber6Behavior;
+
+	@Parameter(property = "pdfreport.title")
+	private String title;
+
+	@Parameter(property = "pdfreport.titleColor")
+	private String titleColor;
+
+	@Parameter(property = "pdfreport.passColor")
+	private String passColor;
+
+	@Parameter(property = "pdfreport.failColor")
+	private String failColor;
+
+	@Parameter(property = "pdfreport.skipColor")
+	private String skipColor;
+
+	@Parameter(property = "pdfreport.displayFeature")
+	private String displayFeature;
+
+	@Parameter(property = "pdfreport.displayScenario")
+	private String displayScenario;
+
+	@Parameter(property = "pdfreport.displayDetailed")
+	private String displayDetailed;
+
+	@Parameter(property = "pdfreport.displayExpanded")
+	private String displayExpanded;
+
+	@Parameter(property = "pdfreport.displayAttached")
+	private String displayAttached;
 
 	private JsonPathCollector jsonPathCollector;
 	private JsonFileConverter jsonFileConverter;
@@ -67,9 +98,15 @@ public class CucumberPDFReportPlugin extends AbstractMojo {
 			PDFCucumberReportDataGenerator generator = new PDFCucumberReportDataGenerator();
 			ReportData reportData = generator.generateReportData(features);
 
+			ParameterConfig parameterConfig = ParameterConfig.builder().title(title).titleColor(titleColor)
+					.passColor(passColor).failColor(failColor).skipColor(skipColor).displayFeature(displayFeature)
+					.displayScenario(displayScenario).displayDetailed(displayDetailed).displayExpanded(displayExpanded)
+					.displayAttached(displayAttached).build();
+
 			PDFCucumberReport pdfCucumberReport = new PDFCucumberReport(reportData,
 					reportProperties.getReportDirectory(),
 					MediaCleanupOption.builder().cleanUpType(CleanupType.ALL).build());
+			pdfCucumberReport.setParameterConfig(parameterConfig);
 			pdfCucumberReport.createReport();
 
 			logger.info("FINISHED CUCUMBER PDF REPORT GENERATION PLUGIN");
