@@ -8,7 +8,8 @@
 	<name>cucumber-pdf-plugin</name>
 	<packaging>maven-plugin</packaging>
 	<url>https://ghchirp.tech/2224</url>
-	<description>Generates Cucumber execution report in PDF format</description>
+	<description>Generates Cucumber execution report in PDF format
+	</description>
 
 	<licenses>
 		<license>
@@ -27,20 +28,24 @@
 	</developers>
 
 	<properties>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.reporting.outputEncoding>UTF-8
+		</project.reporting.outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
 
 		<gson.version>2.9.0</gson.version>
 		<lombok.version>1.18.18</lombok.version>
 		<pdfreporter.version>2.7.0</pdfreporter.version>
+		<cuke-data-generator.version>1.0.0</cuke-data-generator.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<scm>
-		<connection>scm:git:git://github.com/grasshopper7/cucumber-pdf-report.git</connection>
-		<developerConnection>scm:git:ssh://github.com:grasshopper7/cucumber-pdf-report.git</developerConnection>
+		<connection>scm:git:git://github.com/grasshopper7/cucumber-pdf-report.git
+		</connection>
+		<developerConnection>scm:git:ssh://github.com:grasshopper7/cucumber-pdf-report.git
+		</developerConnection>
 		<url>https://github.com/grasshopper7/cucumber-pdf-report</url>
 	</scm>
 
@@ -59,6 +64,11 @@
 			<groupId>tech.grasshopper</groupId>
 			<artifactId>cucumber-pdf-report</artifactId>
 			<version>${pdfreporter.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>tech.grasshopper</groupId>
+			<artifactId>cucumber-json-report-data-generator</artifactId>
+			<version>${cuke-data-generator.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.maven</groupId>
@@ -80,7 +90,8 @@
 		</snapshotRepository>
 		<repository>
 			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/
+			</url>
 		</repository>
 	</distributionManagement>
 
