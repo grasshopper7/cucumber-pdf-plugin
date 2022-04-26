@@ -43,6 +43,8 @@ The below configuration needs to be added to the project pom to setup the PDF re
 | displayExpanded | Display media as zoomed report section  | false |
 | displayAttached | Display media as pdf attachment | true |
 
+Many other report settings can be configured by using a yaml file as described in the [article](https://ghchirp.tech/2224/)
+
 **SUMMARY SECTION**
 
 ![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/summary.png)
