@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.8.1 (2022-4-24)
+
+* Updated cucumber PDF report version to 2.7.1
+
 ## 1.8.0 (2022-4-23)
 
 * Configuration like title, colors etc can be set in pom
