@@ -8,7 +8,7 @@ The below configuration needs to be added to the project pom to setup the PDF re
 <plugin>
 	<groupId>tech.grasshopper</groupId>
 	<artifactId>cucumber-pdf-plugin</artifactId>
-	<version>1.8.0</version>
+	<version>1.8.1</version>
 	<executions>
 		<execution>
 			<id>report</id>
