@@ -47,7 +47,15 @@ Many other report settings can be configured by using a yaml file as described i
 
 **DASHBOARD**
 
+![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/dashboard.png)
+
+**SUMMARY**
+
 ![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/summary.png)
+
+**TAGS**
+
+![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/tags.png)
 
 **FEATURE SECTION**
 
@@ -59,8 +67,8 @@ Many other report settings can be configured by using a yaml file as described i
 
 **DETAILED SECTION**
 
-![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/details.png)
+![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/detailed.png)
 
-**SCREENSHOT**
+**MEDIA**
 
-![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/screenshot.png)
+![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/attach.png)
