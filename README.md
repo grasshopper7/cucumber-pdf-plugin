@@ -64,7 +64,3 @@ Many other report settings can be configured by using a yaml file as described i
 **SCREENSHOT**
 
 ![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/screenshot.png)
-
-**ZOOMED SCREENSHOT**
-
-![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/expanded.png)
