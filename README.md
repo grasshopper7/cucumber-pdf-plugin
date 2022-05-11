@@ -1,6 +1,6 @@
 ## Cucumber PDF Report Plugin
 
-Refer to this [article](https://ghchirp.tech/2224/) for more details. ![Sample Report](https://github.com/grasshopper7/cucumber-pdf-plugin-report/blob/master/cucumber-pdf-plugin-report/pdf-report/report.pdf)
+Refer to this [article](https://ghchirp.tech/2224/) for more details. [Sample implementation](https://github.com/grasshopper7/cucumber-pdf-plugin-report) and ![Sample Report](https://github.com/grasshopper7/cucumber-pdf-plugin-report/blob/master/cucumber-pdf-plugin-report/pdf-report/report.pdf)
 
 The below configuration needs to be added to the project pom to setup the PDF report plugin.
 
@@ -8,7 +8,7 @@ The below configuration needs to be added to the project pom to setup the PDF re
 <plugin>
 	<groupId>tech.grasshopper</groupId>
 	<artifactId>cucumber-pdf-plugin</artifactId>
-	<version>1.8.1</version>
+	<version>1.9.0</version>
 	<executions>
 		<execution>
 			<id>report</id>
@@ -45,7 +45,7 @@ The below configuration needs to be added to the project pom to setup the PDF re
 
 Many other report settings can be configured by using a yaml file as described in the [article](https://ghchirp.tech/2224/)
 
-**SUMMARY SECTION**
+**DASHBOARD**
 
 ![sample](https://raw.githubusercontent.com/grasshopper7/cucumber-pdf-plugin/master/cucumber-pdf-plugin/summary.png)
 
