@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.9.1 (2022-5-11)
+
+* Updated cucumber PDF report version to 2.8.1
+
 ## 1.9.0 (2022-5-8)
 
 * Updated cucumber PDF report version to 2.8.0
