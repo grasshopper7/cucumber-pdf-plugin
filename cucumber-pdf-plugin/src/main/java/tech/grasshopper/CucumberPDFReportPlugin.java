@@ -67,6 +67,15 @@ public class CucumberPDFReportPlugin extends AbstractMojo {
 	@Parameter(property = "pdfreport.displayAttached")
 	private String displayAttached;
 
+	@Parameter(property = "pdfreport.skipHooks")
+	private String skipHooks;
+
+	@Parameter(property = "pdfreport.skipScenarioHooks")
+	private String skipScenarioHooks;
+
+	@Parameter(property = "pdfreport.skipStepHooks")
+	private String skipStepHooks;
+
 	private JsonPathCollector jsonPathCollector;
 	private JsonFileConverter jsonFileConverter;
 	private ReportProperties reportProperties;
@@ -101,7 +110,8 @@ public class CucumberPDFReportPlugin extends AbstractMojo {
 			ParameterConfig parameterConfig = ParameterConfig.builder().title(title).titleColor(titleColor)
 					.passColor(passColor).failColor(failColor).skipColor(skipColor).displayFeature(displayFeature)
 					.displayScenario(displayScenario).displayDetailed(displayDetailed).displayExpanded(displayExpanded)
-					.displayAttached(displayAttached).build();
+					.displayAttached(displayAttached).skipHooks(skipHooks).skipScenarioHooks(skipScenarioHooks)
+					.skipStepHooks(skipStepHooks).build();
 
 			PDFCucumberReport pdfCucumberReport = new PDFCucumberReport(reportData,
 					reportProperties.getReportDirectory(),
