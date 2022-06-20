@@ -8,7 +8,7 @@ The below configuration needs to be added to the project pom to setup the PDF re
 <plugin>
 	<groupId>tech.grasshopper</groupId>
 	<artifactId>cucumber-pdf-plugin</artifactId>
-	<version>1.10.0</version>
+	<version>1.11.0</version>
 	<executions>
 		<execution>
 			<id>report</id>
@@ -42,6 +42,9 @@ The below configuration needs to be added to the project pom to setup the PDF re
 | displayDetailed | Display step detailed report section  | true |
 | displayExpanded | Display media as zoomed report section  | false |
 | displayAttached | Display media as pdf attachment | true |
+| skipHooks | All passed hooks are hidden | false |
+| skipScenarioHooks | All passed Scenario hooks are hidden | false |
+| skipStepHooks | All passed Step hooks are hidden | false |
 
 Many other report settings can be configured by using a yaml file as described in the [article](https://ghchirp.tech/2224/)
 
