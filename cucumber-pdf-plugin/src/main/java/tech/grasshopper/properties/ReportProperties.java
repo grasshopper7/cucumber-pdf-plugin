@@ -43,9 +43,9 @@ public class ReportProperties {
 	}
 
 	public void setReportDirectory(String reportDirectory, String reportDirectoryTimeStamp) {
-		if (reportDirectoryTimeStamp == null)
+		if (reportDirectoryTimeStamp == null || "null".equals(reportDirectoryTimeStamp)) {
 			this.reportDirectory = reportDirectory;
-
+		}
 		else {
 			DateTimeFormatter timeStampFormat = null;
 			String timeStampStr = "";
