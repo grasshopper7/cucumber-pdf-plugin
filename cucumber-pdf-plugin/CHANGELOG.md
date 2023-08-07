@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.14.0 (2023-8-7)
+
+* Assign "null" value to ignore default cucumberPdfReportDirectoryTimeStamp property
+
 ## 1.13.0 (2023-5-12)
 
 * Updated cucumber PDF report version to 2.13.0
