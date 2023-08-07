@@ -30,7 +30,7 @@ The below configuration needs to be added to the project pom to setup the PDF re
 | :----------- | :----------- | :----------- |
 | cucumberJsonReportDirectory | Directory location of cucumber json reports. Required. | |
 | cucumberPdfReportDirectory | Directory prefix of location of generated pdf report | report |
-| cucumberPdfReportDirectoryTimeStamp | Directory suffix of location of generated pdf report | dd MM yyyy HH mm ss |
+| cucumberPdfReportDirectoryTimeStamp | Directory suffix of location of generated pdf report. Assign null explicitly to ignore default value | dd MM yyyy HH mm ss |
 | strictCucumber6Behavior | Cucumber 6 Strict behavior | true |
 | title | Report title | Cucumber PDF Report |
 | titleColor | Report title color in hex without leading # | Black |
