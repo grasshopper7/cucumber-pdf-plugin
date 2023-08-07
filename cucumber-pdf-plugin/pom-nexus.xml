@@ -7,7 +7,7 @@
 	<version>1.14.0</version>
 	<name>cucumber-pdf-plugin</name>
 	<packaging>maven-plugin</packaging>
-	<url>https://ghchirp.online/2224</url>
+	<url>https://ghchirp.site/2224</url>
 	<description>Generates Cucumber execution report in PDF format
 	</description>
 
@@ -23,7 +23,7 @@
 			<name>Grass Hopper</name>
 			<email>grass.hopper.moc@gmail.com</email>
 			<organization>Grasshopper</organization>
-			<organizationUrl>http://ghchirp.tech/</organizationUrl>
+			<organizationUrl>http://ghchirp.site/</organizationUrl>
 		</developer>
 	</developers>
 
