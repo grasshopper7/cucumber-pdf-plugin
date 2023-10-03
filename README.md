@@ -1,6 +1,6 @@
 ## Cucumber PDF Report Plugin
 
-Refer to this [article](https://ghchirp.online/2224/) for more details. [Sample implementation](https://github.com/grasshopper7/cucumber-pdf-plugin-report) and ![Sample Report](https://github.com/grasshopper7/cucumber-pdf-plugin-report/blob/master/cucumber-pdf-plugin-report/pdf-report/report.pdf)
+Refer to this [article](https://ghchirp.site/2224/) for more details. [Sample implementation](https://github.com/grasshopper7/cucumber-pdf-plugin-report) and ![Sample Report](https://github.com/grasshopper7/cucumber-pdf-plugin-report/blob/master/cucumber-pdf-plugin-report/pdf-report/report.pdf)
 
 The below configuration needs to be added to the project pom to setup the PDF report plugin.
 
